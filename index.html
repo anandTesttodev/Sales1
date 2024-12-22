@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .product-container {
+            background: #fff;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .slider {
+            position: relative;
+            max-width: 50%;
+            width: 50%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+            display: none; /* Hide all images by default */
+        }
+        .slides img.active {
+            display: block; /* Only the active image will be visible */
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            cursor: pointer;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .product-info {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-title {
+            font-size: 28px;
+            margin: 20px 0;
+        }
+        .product-price {
+            font-size: 24px;
+            color: #dc3545;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .product-description {
+            font-size: 18px;
+            color: #6c757d;
+            margin: 20px 0;
+        }
+        .user-reviews {
+            margin: 20px 0;
+        }
+        .review {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .review h3 {
+            margin: 0 0 10px 0;
+        }
+        .stars {
+            color: #ffc107;
+        }
+        .buy-now-button {
+            display: block;
+            text-align: center;
+            margin: 20px auto 0;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .buy-now-button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .slider, .product-info {
+                width: 100%;
+            }
+            .product-title {
+                font-size: 24px;
+            }
+            .product-price {
+                font-size: 20px;
+            }
+            .product-description {
+                font-size: 16px;
+            }
+            .buy-now-button {
+                font-size: 18px;
+                padding: 12px 24px;
+            }
+        }
+        @media (max-width: 480px) {
+            .product-container {
+                padding: 15px;
+            }
+            .product-title {
+                font-size: 20px;
+            }
+            .product-price {
+                font-size: 18px;
+            }
+            .product-description {
+                font-size: 14px;
+            }
+            .buy-now-button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <div class="slider">
+            <!-- Add Book Images Online Above the 5 Product Images -->
+            <div class="slides">
+                <img class="active" src="https://covers.openlibrary.org/b/id/12224650-L.jpg" alt="Book Image 1" />
+                <img src="https://covers.openlibrary.org/b/id/8905025-L.jpg" alt="Book Image 2" />
+                <img src="https://covers.openlibrary.org/b/id/8052441-L.jpg" alt="Book Image 3" />
+                <img src="https://covers.openlibrary.org/b/id/9114453-L.jpg" alt="Book Image 4" />
+                <img src="https://covers.openlibrary.org/b/id/9617856-L.jpg" alt="Book Image 5" />
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="product-info">
+            <div>
+                <h1 class="product-title">Product Name</h1>
+                <p class="product-price">$99.99</p>
+                <p class="product-description">This is a detailed description of the product. Highlight the main features and benefits to provide potential customers with all the information they need.</p>
+            </div>
+            <div class="user-reviews">
+                <h2>User Reviews</h2>
+                <div class="review">
+                    <h3>Jane Doe</h3>
+                    <div class="stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                    <p>This product is amazing! It exceeded my expectations and I would highly recommend it to anyone.</p>
+                </div>
+                <div class="review">
+                    <h3>John Smith</h3>
+                    <div class="stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9734;
+                    </div>
+                    <p>Good quality and fast delivery. I'm very satisfied with this purchase.</p>
+                </div>
+            </div>
+            <a href="upi://pay?ver=01&mode=19&pa=shivashakthi107014.rzp@icici&pn=ShivaShakthi&tr=RZPPaGE7dr2rsDsOjqrv2&cu=INR&mc=5651&qrMedium=04&tn=PaymenttoShivaShakthi&am=10.00" class="buy-now-button">Buy Now</a>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.slides img');
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active'); // Hide all images
+            }
+            slides[slideIndex].classList.add('active'); // Show the active image
+        }
+
+        function plusSlides(n) {
+            let slides = document.querySelectorAll('.slides img');
+            slideIndex += n;
+            
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1; // Go to last image if moving backward
+            }
+            if (slideIndex >= slides.length) {
+                slideIndex = 0; // Go to first image if moving forward beyond the last image
+            }
+            showSlides();
+        }
+    </script>
+</body>
+</html>
