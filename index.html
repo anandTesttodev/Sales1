@@ -13,6 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
         .product-container {
             background: #fff;
@@ -22,13 +23,16 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             display: flex;
-            flex-direction: row;
-            gap: 20px;
+            flex-direction: column;
+        }
+        .product-images {
+            max-width: 100%;
+            margin-bottom: 20px;
         }
         .slider {
             position: relative;
-            max-width: 50%;
-            width: 50%;
+            max-width: 100%;
+            width: 100%;
             border-radius: 10px;
             overflow: hidden;
         }
@@ -39,10 +43,10 @@
         .slides img {
             width: 100%;
             border-radius: 10px;
-            display: none; /* Hide all images by default */
+            display: none;
         }
         .slides img.active {
-            display: block; /* Only the active image will be visible */
+            display: block;
         }
         .prev, .next {
             position: absolute;
@@ -66,10 +70,7 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
         .product-info {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            margin-top: 20px;
         }
         .product-title {
             font-size: 28px;
@@ -86,20 +87,18 @@
             color: #6c757d;
             margin: 20px 0;
         }
-        .user-reviews {
+        .delivery-details {
+            font-size: 16px;
+            color: #28a745;
             margin: 20px 0;
+            font-weight: bold;
         }
-        .review {
-            background: #f1f1f1;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-        .review h3 {
-            margin: 0 0 10px 0;
+        .product-rating {
+            margin: 20px 0;
         }
         .stars {
             color: #ffc107;
+            font-size: 20px;
         }
         .buy-now-button {
             display: block;
@@ -117,113 +116,218 @@
         .buy-now-button:hover {
             background-color: #0056b3;
         }
-        @media (max-width: 768px) {
-            .product-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .slider, .product-info {
-                width: 100%;
-            }
-            .product-title {
-                font-size: 24px;
-            }
-            .product-price {
-                font-size: 20px;
-            }
-            .product-description {
-                font-size: 16px;
-            }
-            .buy-now-button {
-                font-size: 18px;
-                padding: 12px 24px;
-            }
+        .user-reviews {
+            margin: 20px 0;
         }
-        @media (max-width: 480px) {
-            .product-container {
-                padding: 15px;
-            }
-            .product-title {
-                font-size: 20px;
-            }
-            .product-price {
-                font-size: 18px;
-            }
-            .product-description {
-                font-size: 14px;
-            }
-            .buy-now-button {
-                font-size: 16px;
-                padding: 10px 20px;
-            }
+        .review {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: flex;
+            gap: 15px;
+        }
+        .review img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        .review h3 {
+            margin: 0 0 10px 0;
+        }
+        .review-images {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .review-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 10px 10px 0 0;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="product-container">
-        <div class="slider">
-            <!-- Add Book Images Online Above the 5 Product Images -->
-            <div class="slides">
-                <img class="active" src="https://covers.openlibrary.org/b/id/12224650-L.jpg" alt="Book Image 1" />
-                <img src="https://covers.openlibrary.org/b/id/8905025-L.jpg" alt="Book Image 2" />
-                <img src="https://covers.openlibrary.org/b/id/8052441-L.jpg" alt="Book Image 3" />
-                <img src="https://covers.openlibrary.org/b/id/9114453-L.jpg" alt="Book Image 4" />
-                <img src="https://covers.openlibrary.org/b/id/9617856-L.jpg" alt="Book Image 5" />
+        <!-- Product Images Section -->
+        <div class="product-images">
+            <div class="slider">
+                <div class="slides">
+                    <img class="active" src="https://covers.openlibrary.org/b/id/12224650-L.jpg" alt="Book Image 1" />
+                    <img src="https://covers.openlibrary.org/b/id/8905025-L.jpg" alt="Book Image 2" />
+                    <img src="https://covers.openlibrary.org/b/id/8052441-L.jpg" alt="Book Image 3" />
+                    <img src="https://covers.openlibrary.org/b/id/9114453-L.jpg" alt="Book Image 4" />
+                    <img src="https://covers.openlibrary.org/b/id/9617856-L.jpg" alt="Book Image 5" />
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+
+        <!-- Product Info Section (Title, Price, Description) -->
         <div class="product-info">
-            <div>
-                <h1 class="product-title">Product Name</h1>
-                <p class="product-price">$99.99</p>
-                <p class="product-description">This is a detailed description of the product. Highlight the main features and benefits to provide potential customers with all the information they need.</p>
-            </div>
-            <div class="user-reviews">
-                <h2>User Reviews</h2>
-                <div class="review">
-                    <h3>Jane Doe</h3>
-                    <div class="stars">
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                    </div>
-                    <p>This product is amazing! It exceeded my expectations and I would highly recommend it to anyone.</p>
-                </div>
-                <div class="review">
-                    <h3>John Smith</h3>
-                    <div class="stars">
-                        &#9733;&#9733;&#9733;&#9733;&#9734;
-                    </div>
-                    <p>Good quality and fast delivery. I'm very satisfied with this purchase.</p>
-                </div>
-            </div>
-            <a href="upi://pay?ver=01&mode=19&pa=shivashakthi107014.rzp@icici&pn=ShivaShakthi&tr=RZPPaGE7dr2rsDsOjqrv2&cu=INR&mc=5651&qrMedium=04&tn=PaymenttoShivaShakthi&am=10.00" class="buy-now-button">Buy Now</a>
+            <h1 class="product-title">Product Name</h1>
+            <p class="product-price">$99.99</p>
+            <p class="product-description">This is a detailed description of the product. Highlight the main features and benefits to provide potential customers with all the information they need.</p>
+            <p class="delivery-details">Delivered in 4 days all over India.</p>
         </div>
+
+        <!-- Product Rating Section -->
+        <div class="product-rating">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>5 stars based on 100 reviews</p>
+        </div>
+
+        <!-- Buy Now Button -->
+        <a href="upi://pay?ver=01&mode=19&pa=shivashakthi107014.rzp@icici&pn=ShivaShakthi&tr=RZPPaGE7dr2rsDsOjqrv2&cu=INR&mc=5651&qrMedium=04&tn=PaymenttoShivaShakthi&am=10.00" class="buy-now-button">Buy Now</a>
+    </div>
+
+    <!-- User Reviews Section with Dress Images -->
+    <div class="user-reviews">
+        <h2>User Reviews</h2>
+        <div class="review">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Reviewer 1">
+            <div>
+                <h3>Jane Doe</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>This product is amazing! It exceeded my expectations and I would highly recommend it to anyone.</p>
+                <div class="review-images">
+                    <img src="https://modone.com/hpeciai/a129d01c5347e8e5d5e9142516bd58f1/eng_pl_Mens-plain-t-shirt-S1323-light-blue-15421_1.jpg" class="review-image" alt="Dress 1" onclick="openModal('https://via.placeholder.com/400?text=Dress+1')">
+                    <img src="https://modone.com/hpeciai/4782c1bd2f435e46ae244e130e733138/eng_pl_Mens-plain-t-shirt-S1323-light-blue-15421_2.webp" class="review-image" alt="Dress 2" onclick="openModal('https://via.placeholder.com/400?text=Dress+2')">
+                </div>
+            </div>
+        </div>
+        <div class="review">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Reviewer 2">
+            <div>
+                <h3>John Smith</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <p>Good quality and fast delivery. I'm very satisfied with this purchase.</p>
+                <div class="review-images">
+                    <img src="https://via.placeholder.com/100?text=Dress+3" class="review-image" alt="Dress 3" onclick="openModal('https://via.placeholder.com/400?text=Dress+3')">
+                    <img src="https://via.placeholder.com/100?text=Dress+4" class="review-image" alt="Dress 4" onclick="openModal('https://via.placeholder.com/400?text=Dress+4')">
+                </div>
+            </div>
+        </div>
+        <div class="review">
+            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Reviewer 3">
+            <div>
+                <h3>Emma Brown</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>Very good product. Worth the price!</p>
+                <div class="review-images">
+                    <img src="https://via.placeholder.com/100?text=Dress+5" class="review-image" alt="Dress 5" onclick="openModal('https://via.placeholder.com/400?text=Dress+5')">
+                    <img src="https://via.placeholder.com/100?text=Dress+6" class="review-image" alt="Dress 6" onclick="openModal('https://via.placeholder.com/400?text=Dress+6')">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Product Store. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </p>
+    </footer>
+
+    <!-- Modal for Image Preview -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
     </div>
 
     <script>
         let slideIndex = 0;
         showSlides();
 
-        function showSlides() {
-            let slides = document.querySelectorAll('.slides img');
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active'); // Hide all images
-            }
-            slides[slideIndex].classList.add('active'); // Show the active image
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides();
         }
 
-        function plusSlides(n) {
-            let slides = document.querySelectorAll('.slides img');
-            slideIndex += n;
-            
-            if (slideIndex < 0) {
-                slideIndex = slides.length - 1; // Go to last image if moving backward
-            }
+        function showSlides() {
+            const slides = document.querySelectorAll('.slides img');
             if (slideIndex >= slides.length) {
-                slideIndex = 0; // Go to first image if moving forward beyond the last image
+                slideIndex = 0;
             }
-            showSlides();
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === slideIndex) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function openModal(src) {
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("modal-img").src = src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
         }
     </script>
 </body>
 </html>
+
