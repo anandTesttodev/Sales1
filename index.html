@@ -132,6 +132,7 @@
             width: 50px;
             height: 50px;
             object-fit: cover;
+            cursor: pointer;
         }
         .review h3 {
             margin: 0 0 10px 0;
@@ -146,6 +147,7 @@
             height: 100px;
             object-fit: cover;
             border-radius: 8px;
+            cursor: pointer;
         }
         footer {
             background-color: #343a40;
@@ -203,16 +205,17 @@
     </style>
 </head>
 <body>
+
     <div class="product-container">
         <!-- Product Images Section -->
         <div class="product-images">
             <div class="slider">
                 <div class="slides">
-                    <img class="active" src="https://covers.openlibrary.org/b/id/12224650-L.jpg" alt="Book Image 1" />
-                    <img src="https://covers.openlibrary.org/b/id/8905025-L.jpg" alt="Book Image 2" />
-                    <img src="https://covers.openlibrary.org/b/id/8052441-L.jpg" alt="Book Image 3" />
-                    <img src="https://covers.openlibrary.org/b/id/9114453-L.jpg" alt="Book Image 4" />
-                    <img src="https://covers.openlibrary.org/b/id/9617856-L.jpg" alt="Book Image 5" />
+                    <img class="active" src="https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg" alt="Book Image 1" />
+                    <img src="https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg" alt="Book Image 2" />
+                    <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" alt="Book Image 3" />
+                    <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" alt="Book Image 4" />
+                    <img src="https://m.media-amazon.com/images/I/413sTY3Y9fL._SP221,478,0%7C31BNvVgAQkL.jpg,31ySYXbYhSL.jpg,41uhHExMqyL.jpg,41UdaybsU+L.jpg,31ASAKyRyLL.jpg_.jpg" alt="Book Image 5" />
                 </div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -221,12 +224,24 @@
 
         <!-- Product Info Section (Title, Price, Description) -->
         <div class="product-info">
-            <h1 class="product-title">Product Name</h1>
-            <p class="product-price">$99.99</p>
-            <p class="product-description">This is a detailed description of the product. Highlight the main features and benefits to provide potential customers with all the information they need.</p>
-            <p class="delivery-details">Delivered in 4 days all over India.</p>
+            <h1 class="product-title">
+                <strong>Samsung Galaxy S23 Ultra 5G AI Smartphone (Green, 12GB, 256GB Storage)</strong>
+            </h1>
+            <p class="product-price">
+                <strong>₹72,999</strong>
+            </p>
+            <p class="product-description">
+                <strong>Experience the power of Galaxy AI with S23 Ultra</strong> to effortlessly perfect your photos with Photo Assist, communicate quickly outside your language with Live Translate or pick the right tone with Chat Assist. Galaxy AI makes your memories brighter, your communication easier, and your tone nicer, letting you sail through life effortlessly, just like that!<br><br>
+                <strong>200MP. Wow-worthy resolution</strong> - Resolution on the Wide-angle Camera has nearly doubled, delivering strikingly clear photos. Zoom and crop your shots for a whole new view — or leave it intact for brilliant detail, corner to corner.<br><br>
+                <strong>Power for those who don't pause</strong> - Your quest for epic mobile gaming is over. Snapdragon 8 Gen 2 Mobile Platform for Galaxy optimizes and streamlines your device for silky smooth games — without draining the battery.<br><br>
+                <strong>Note's signature tool comes built-in</strong> - The built-in S Pen keeps the legacy of Note alive. Plus, it helps you ditch the dependency on notebooks, making sketches and jotting notes effortless and eco-friendly.<br><br>
+                <strong>More innovation, less footprint</strong> – Galaxy S23 Ultra's striking symmetrical design returns with one major difference: recycled and eco-conscious materials. From the metal frame to the glass finish, it's polished with fresh new colors inspired by nature.
+            </p>
+            <p class="delivery-details">
+                <strong>Delivered in 4 days all over India.</strong>
+            </p>
         </div>
-
+        
         <!-- Product Rating Section -->
         <div class="product-rating">
             <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -240,58 +255,153 @@
     <!-- User Reviews Section with Dress Images -->
     <div class="user-reviews">
         <h2>User Reviews</h2>
+        
+        <!-- Review 1 -->
         <div class="review">
-            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Reviewer 1">
+            <img src="https://p0.pxfuel.com/preview/399/258/365/boy-face-blur-indian-royalty-free-thumbnail.jpg" alt="Reviewer 1" onclick="openModal('https://m.media-amazon.com/images/I/71DNOJ05uML.jpg')">
             <div>
                 <h3>Jane Doe</h3>
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                 <p>This product is amazing! It exceeded my expectations and I would highly recommend it to anyone.</p>
                 <div class="review-images">
-                    <img src="https://modone.com/hpeciai/a129d01c5347e8e5d5e9142516bd58f1/eng_pl_Mens-plain-t-shirt-S1323-light-blue-15421_1.jpg" class="review-image" alt="Dress 1" onclick="openModal('https://via.placeholder.com/400?text=Dress+1')">
-                    <img src="https://modone.com/hpeciai/4782c1bd2f435e46ae244e130e733138/eng_pl_Mens-plain-t-shirt-S1323-light-blue-15421_2.webp" class="review-image" alt="Dress 2" onclick="openModal('https://via.placeholder.com/400?text=Dress+2')">
+                    <img src="https://m.media-amazon.com/images/I/71DNOJ05uML.jpg" class="review-image" alt="Dress 1" onclick="openModal('https://m.media-amazon.com/images/I/71DNOJ05uML.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/81GrustqvUL.jpg" class="review-image" alt="Dress 2" onclick="openModal('https://m.media-amazon.com/images/I/81GrustqvUL.jpg')">
                 </div>
             </div>
         </div>
+
+        <!-- Review 2 -->
         <div class="review">
-            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Reviewer 2">
+            <img src="https://th.bing.com/th/id/OIP.Ep07we1LvdYXc7jL6tAbaAHaLH?rs=1&pid=ImgDetMain" alt="Reviewer 2" onclick="openModal('https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg')">
             <div>
                 <h3>John Smith</h3>
-                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-                <p>Good quality and fast delivery. I'm very satisfied with this purchase.</p>
-                <div class="review-images">
-                    <img src="https://via.placeholder.com/100?text=Dress+3" class="review-image" alt="Dress 3" onclick="openModal('https://via.placeholder.com/400?text=Dress+3')">
-                    <img src="https://via.placeholder.com/100?text=Dress+4" class="review-image" alt="Dress 4" onclick="openModal('https://via.placeholder.com/400?text=Dress+4')">
-                </div>
-            </div>
-        </div>
-        <div class="review">
-            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Reviewer 3">
-            <div>
-                <h3>Emma Brown</h3>
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>Very good product. Worth the price!</p>
+                <p>Great value for money. The features are exactly as described, and it works flawlessly.</p>
                 <div class="review-images">
-                    <img src="https://via.placeholder.com/100?text=Dress+5" class="review-image" alt="Dress 5" onclick="openModal('https://via.placeholder.com/400?text=Dress+5')">
-                    <img src="https://via.placeholder.com/100?text=Dress+6" class="review-image" alt="Dress 6" onclick="openModal('https://via.placeholder.com/400?text=Dress+6')">
+                    <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" class="review-image" alt="Dress 3" onclick="openModal('https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/71DNOJ05uML.jpg" class="review-image" alt="Dress 4" onclick="openModal('https://m.media-amazon.com/images/I/71DNOJ05uML.jpg')">
                 </div>
             </div>
         </div>
+
+        <!-- Review 3 -->
+        <div class="review">
+            <img src="https://roesome.com/wp-content/uploads/2013/05/Portrait-Photography-in-Bangalore-Teenage-Portraits-3.jpg" alt="Reviewer 3" onclick="openModal('https://m.media-amazon.com/images/I/81GrustqvUL.jpg')">
+            <div>
+                <h3>Alice Brown</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>The camera quality is amazing! Best smartphone I have ever used.</p>
+                <div class="review-images">
+                    <img src="https://m.media-amazon.com/images/I/81GrustqvUL.jpg" class="review-image" alt="Dress 5" onclick="openModal('https://m.media-amazon.com/images/I/81GrustqvUL.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg" class="review-image" alt="Dress 6" onclick="openModal('https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review">
+            <img src="https://th.bing.com/th/id/OIP.kVPmqzKQ5eUfADLWSiJ52gHaHa?rs=1&pid=ImgDetMain" alt="Reviewer 4" onclick="openModal('https://m.media-amazon.com/images/I/41lTRT5n1lL._SY445_.jpg')">
+            <div>
+                <h3>David Miller</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>I am very happy with this product. The design is sleek, and the performance is top-notch!</p>
+                <div class="review-images">
+                    <img src="https://m.media-amazon.com/images/I/41lTRT5n1lL._SY445_.jpg" class="review-image" alt="Dress 7" onclick="openModal('https://m.media-amazon.com/images/I/41lTRT5n1lL._SY445_.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/71DNOJ05uML.jpg" class="review-image" alt="Dress 8" onclick="openModal('https://m.media-amazon.com/images/I/71DNOJ05uML.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="review">
+            <img src="https://ruralindiaonline.org/media/images/IMG_3458_Mohammed_Afsal_T.P..height-1080.jpg" alt="Reviewer 5" onclick="openModal('https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg')">
+            <div>
+                <h3>Emily Johnson</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>The battery life lasts longer than expected! Very impressed with its efficiency.</p>
+                <div class="review-images">
+                    <img src="https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg" class="review-image" alt="Dress 9" onclick="openModal('https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/71DNOJ05uML.jpg" class="review-image" alt="Dress 10" onclick="openModal('https://m.media-amazon.com/images/I/71DNOJ05uML.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="review">
+            <img src="https://th.bing.com/th/id/OIP.-TYq2e789dn0WQY1aaALMwAAAA?w=400&h=500&rs=1&pid=ImgDetMain" alt="Reviewer 6" onclick="openModal('https://m.media-amazon.com/images/I/71GrustqvUL.jpg')">
+            <div>
+                <h3>George Wilson</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>Truly a remarkable product! I love the speed and fluidity of this device.</p>
+                <div class="review-images">
+                    <img src="https://m.media-amazon.com/images/I/71GrustqvUL.jpg" class="review-image" alt="Dress 11" onclick="openModal('https://m.media-amazon.com/images/I/71GrustqvUL.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg" class="review-image" alt="Dress 12" onclick="openModal('https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="review">
+            <img src="https://ruralindiaonline.org/media/original_images/Fazhar_Ghosh_FACE_31.jpg" alt="Reviewer 7" onclick="openModal('https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg')">
+            <div>
+                <h3>Jessica Clark</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>This phone's camera is the best in its class. Highly recommend for anyone looking for a great mobile photography experience.</p>
+                <div class="review-images">
+                    <img src="https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg" class="review-image" alt="Dress 13" onclick="openModal('https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/71GrustqvUL.jpg" class="review-image" alt="Dress 14" onclick="openModal('https://m.media-amazon.com/images/I/71GrustqvUL.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="review">
+            <img src="https://www.dakshana.org/wp-content/uploads/2017/10/2597.png" alt="Reviewer 8" onclick="openModal('https://m.media-amazon.com/images/I/81GrustqvUL.jpg')">
+            <div>
+                <h3>Michael Evans</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>The device is super fast, and the display quality is stunning! I am loving it so far.</p>
+                <div class="review-images">
+                    <img src="https://m.media-amazon.com/images/I/81GrustqvUL.jpg" class="review-image" alt="Dress 15" onclick="openModal('https://m.media-amazon.com/images/I/81GrustqvUL.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg" class="review-image" alt="Dress 16" onclick="openModal('https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 9 -->
+        <div class="review">
+            <img src="https://images.squarespace-cdn.com/content/v1/605038d5d854783f2f2ef64c/1615953310692-Y3HQVWQD6O9H6IT3CK3B/Victims-of-Rana-Plaza_2.jpg" alt="Reviewer 9" onclick="openModal('https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg')">
+            <div>
+                <h3>Sophie Adams</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>I can't get enough of this phone. It's fast, sleek, and stylish.</p>
+                <div class="review-images">
+                    <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" class="review-image" alt="Dress 17" onclick="openModal('https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/81GrustqvUL.jpg" class="review-image" alt="Dress 18" onclick="openModal('https://m.media-amazon.com/images/I/81GrustqvUL.jpg')">
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 10 -->
+        <div class="review">
+            <img src="https://www.seekpng.com/png/detail/847-8474751_download-empty-profile.png" alt="Reviewer 10" onclick="openModal('https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg')">
+            <div>
+                <h3>Lucas Carter</h3>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>Solid purchase, highly recommend this phone for anyone who values camera performance and battery life!</p>
+                <div class="review-images">
+                    <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" class="review-image" alt="Dress 19" onclick="openModal('https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg" class="review-image" alt="Dress 20" onclick="openModal('https://m.media-amazon.com/images/I/81D3oF3+TAL._SX679_.jpg')">
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Product Store. All rights reserved.</p>
-        <p>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact Us</a>
-        </p>
-    </footer>
-
-    <!-- Modal for Image Preview -->
+    <!-- Modal -->
     <div id="modal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-img">
+        <img class="modal-content" id="modalImage" src="">
     </div>
 
     <script>
@@ -305,12 +415,8 @@
 
         function showSlides() {
             const slides = document.querySelectorAll('.slides img');
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
-            }
-            if (slideIndex < 0) {
-                slideIndex = slides.length - 1;
-            }
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
             slides.forEach((slide, index) => {
                 slide.classList.remove('active');
                 if (index === slideIndex) {
@@ -319,15 +425,26 @@
             });
         }
 
-        function openModal(src) {
-            document.getElementById("modal").style.display = "block";
-            document.getElementById("modal-img").src = src;
+        function openModal(imageSrc) {
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImage.src = imageSrc;
         }
 
         function closeModal() {
-            document.getElementById("modal").style.display = "none";
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
         }
     </script>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+
 </body>
 </html>
-
