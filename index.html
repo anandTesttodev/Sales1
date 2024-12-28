@@ -19,7 +19,6 @@
             background: #fff;
             padding: 30px;
             max-width: 800px;
-            width: 90%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             display: flex;
@@ -118,7 +117,6 @@
         }
         .user-reviews {
             margin: 20px 0;
-            pa
         }
         .review {
             background: #f1f1f1;
@@ -204,24 +202,141 @@
             cursor: pointer;
         }
     </style>
+
+ <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Carousel container */
+        .product-image-carousel {
+            width: 100%;
+            max-width: 100%;  /* Allow it to take full width */
+            margin: 0 auto;    /* Center the carousel */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Carousel images container */
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Image styling */
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        /* Navigation buttons */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 10;
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        /* Optional: Add styles for the dots (indicators) */
+        .carousel-indicators {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .carousel-indicators span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-indicators .active {
+            background-color: #333;
+        }
+
+        /* Responsive Design */
+        /* On small screens, make the carousel image container full-width */
+        @media (max-width: 768px) {
+            .product-image-carousel {
+                max-width: 100%;
+            }
+
+            /* Adjust button size and position for mobile */
+            .carousel-button {
+                font-size: 20px;
+                padding: 8px;
+            }
+
+            /* Adjust the size of the dots for smaller screens */
+            .carousel-indicators span {
+                width: 8px;
+                height: 8px;
+                margin: 0 4px;
+            }
+        }
+
+        /* On even smaller screens, we can fine-tune things further */
+        @media (max-width: 480px) {
+            .carousel-button {
+                font-size: 18px;
+                padding: 6px;
+            }
+
+            .carousel-indicators span {
+                width: 6px;
+                height: 6px;
+            }
+        }
+    </style>
+
+</style>
+
+
 </head>
 <body>
-
-    <div class="product-container">
-        <!-- Product Images Section -->
-        <div class="product-images">
-            <div class="slider">
-                <div class="slides">
-                    <img class="active" src="https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg" alt="Book Image 1" />
-                    <img src="https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg" alt="Book Image 2" />
-                    <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" alt="Book Image 3" />
-                    <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" alt="Book Image 4" />
-                    <img src="https://m.media-amazon.com/images/I/413sTY3Y9fL._SP221,478,0%7C31BNvVgAQkL.jpg,31ySYXbYhSL.jpg,41uhHExMqyL.jpg,41UdaybsU+L.jpg,31ASAKyRyLL.jpg_.jpg" alt="Book Image 5" />
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+<div class="product-container">
+    <!-- Product Image Carousel -->
+    <div class="product-image-carousel">
+        <div class="carousel-images">
+            <img src="https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg" alt="Product Image 1">
+            <img src="https://m.media-amazon.com/images/I/71Mgmay88QL._SX679_.jpg" alt="Book Image 2" alt="Product Image 2">
+            <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" alt="Book Image 3" alt="Product Image 3">
+            <img src="https://m.media-amazon.com/images/I/71g0eynUajL._SX679_.jpg" alt="Book Image 4" alt="Product Image 4">
         </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-button left">←</button>
+        <button class="carousel-button right">→</button>
+    </div>
+
+    <!-- Dots for Navigation -->
+    <div class="carousel-indicators">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
 
         <style>
 
@@ -485,7 +600,7 @@
         <div id="loader" class="loader"></div>
         
         <!-- Iframe to display external content -->
-        <iframe id="popup-frame" src="" frameborder="0" onload="hideLoader()"></iframe>
+        <iframe id="popup-frame" src="" frameborder="0" onload=""></iframe>
       </div>
     </div>
   
@@ -516,6 +631,7 @@
           
         <a href="upi://pay?ver=01&mode=19&pa=shivashakthi107014.rzp@icici&pn=ShivaShakthi&tr=RZPPaGE7dr2rsDsOjqrv2&cu=INR&mc=5651&qrMedium=04&tn=PaymenttoShivaShakthi&am=10.00" class="buy-now-button">Buy Now</a>
     </div>
+</div>
 
     <!-- User Reviews Section with Dress Images -->
     <div class="user-reviews">
@@ -702,6 +818,81 @@
             modal.style.display = "none";
         }
     </script>
+
+
+<script>
+    // JavaScript to handle navigation and swipe events
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-images img');
+    const totalImages = images.length;
+    const carouselImages = document.querySelector('.carousel-images');
+    const dots = document.querySelectorAll('.carousel-indicators .dot');
+
+    let startTouch = 0;  // To store the initial touch position
+
+    // Function to change the slide
+    function updateCarousel() {
+        // Move the carousel to the current slide
+        carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update the active dot
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+
+    // Function to move to the next image
+    function slideImages() {
+        currentIndex = (currentIndex + 1) % totalImages;  // Loop back to the first image
+        updateCarousel();
+    }
+
+    // Left button navigation
+    document.querySelector('.carousel-button.left').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateCarousel();
+    });
+
+    // Right button navigation
+    document.querySelector('.carousel-button.right').addEventListener('click', () => {
+        slideImages();
+    });
+
+    // Optional: Click on the dot to jump to that image
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+
+    // Handle swipe events
+    carouselImages.addEventListener('touchstart', (e) => {
+        startTouch = e.touches[0].clientX;
+    });
+
+    carouselImages.addEventListener('touchmove', (e) => {
+        const moveTouch = e.touches[0].clientX;
+        const touchDifference = startTouch - moveTouch;
+
+        // If the user swipes left (negative movement)
+        if (touchDifference > 50) {
+            currentIndex = (currentIndex + 1) % totalImages;
+            updateCarousel();
+            startTouch = 0;  // Reset after the swipe
+        }
+        // If the user swipes right (positive movement)
+        else if (touchDifference < -50) {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            updateCarousel();
+            startTouch = 0;  // Reset after the swipe
+        }
+    });
+
+    // Initialize the carousel by updating the first image
+    updateCarousel();
+</script>
+
+
 
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
