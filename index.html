@@ -613,6 +613,7 @@
     document.getElementById('popup').style.display = 'flex';
     // Show the loader
     document.getElementById('loader').style.display = 'block';
+      document.getElementById('loader').style.display = 'none';
   }
   
   // Function to close the popup
@@ -620,12 +621,6 @@
     // Hide the popup and clear the iframe's content
     document.getElementById('popup').style.display = 'none';
     document.getElementById('popup-frame').src = '';
-    document.getElementById('loader').style.display = 'none'; // Hide loader when popup is closed
-  }
-  
-  // Function to hide the loader once the iframe has loaded
-  function hideLoader() {
-    document.getElementById('loader').style.display = 'none';
   }
   </script>
           
